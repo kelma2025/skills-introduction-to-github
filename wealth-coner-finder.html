@@ -1,0 +1,158 @@
+{\rtf1\ansi\ansicpg936\cocoartf2759
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+{\*\expandedcolortbl;;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww11520\viewh8400\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 <!DOCTYPE html>\
+<html lang="en">\
+<head>\
+    <meta charset="UTF-8">\
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">\
+    <title>Wealth Corner Finder | Feng Shui Energy</title>\
+    <style>\
+        :root \{\
+            --primary: #C5B682; /* \uc0\u25307 \u36130 \u37329 \u33394  */\
+            --secondary: #4CAF50; /* \uc0\u29983 \u26426 \u32511 \u33394  */\
+        \}\
+\
+        body \{\
+            font-family: 'Arial', sans-serif;\
+            max-width: 600px;\
+            margin: 0 auto;\
+            padding: 20px;\
+            background: #f5f5f5;\
+        \}\
+\
+        .container \{\
+            background: white;\
+            border-radius: 15px;\
+            padding: 25px;\
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);\
+        \}\
+\
+        .compass-input \{\
+            display: flex;\
+            align-items: center;\
+            gap: 10px;\
+            margin: 15px 0;\
+        \}\
+\
+        input[type="number"] \{\
+            padding: 8px;\
+            border: 2px solid var(--primary);\
+            border-radius: 8px;\
+            width: 100px;\
+        \}\
+\
+        button \{\
+            background: linear-gradient(to right, var(--primary), var(--secondary));\
+            color: white;\
+            border: none;\
+            padding: 12px 25px;\
+            border-radius: 25px;\
+            cursor: pointer;\
+            font-weight: bold;\
+            transition: transform 0.3s;\
+        \}\
+\
+        button:hover \{\
+            transform: scale(1.05);\
+        \}\
+\
+        .result \{\
+            display: none;\
+            margin-top: 20px;\
+            border-left: 4px solid var(--primary);\
+            padding-left: 15px;\
+        \}\
+\
+        .cta \{\
+            text-align: center;\
+            margin-top: 30px;\
+        \}\
+\
+        .cta a \{\
+            color: var(--secondary);\
+            text-decoration: none;\
+            font-weight: bold;\
+        \}\
+    </style>\
+</head>\
+<body>\
+    <div class="container">\
+        <h2>\uc0\u55357 \u56589  Find Your Wealth Corner</h2>\
+        <p>Follow these 3 steps to activate money flow \uc0\u8595 </p >\
+\
+        <div class="compass-input">\
+            <label>1. Facing Direction:</label>\
+            <input type="number" id="degrees" min="0" max="360" \
+                   placeholder="Compass degrees" required>\
+        </div>\
+\
+        <div>\
+            <label>2. Main Door Location:</label>\
+            <select id="door" required>\
+                <option value="">Select...</option>\
+                <option value="east">East</option>\
+                <option value="south">South</option>\
+                <option value="west">West</option>\
+                <option value="north">North</option>\
+            </select>\
+        </div>\
+\
+        <button onclick="calculateWealthCorner()">Activate Energy \uc0\u8594 </button>\
+\
+        <div id="result" class="result">\
+            <h3>\uc0\u55357 \u56496  Your Wealth Corner is: <span id="location"></span></h3>\
+            <p>\uc0\u10024  Enhancement Tips:</p >\
+            <ul id="tips"></ul>\
+        </div>\
+\
+        <div class="cta">\
+            <p>Want a personalized analysis?<br>\
+            <a href=" " target="_blank"> <!-- \uc0\u36134 \u21495 \u21517 \u26356 \u26032 \u22788  -->\
+                @fengshuienergy_ \uc0\u55357 \u56392  <!-- \u36134 \u21495 \u21517 \u26356 \u26032 \u22788  -->\
+            </a >\
+            </p >\
+        </div>\
+    </div>\
+\
+    <script>\
+        function calculateWealthCorner() \{\
+            const degrees = document.getElementById('degrees').value;\
+            const door = document.getElementById('door').value;\
+            const resultDiv = document.getElementById('result');\
+            const locationSpan = document.getElementById('location');\
+            const tipsList = document.getElementById('tips');\
+\
+            // \uc0\u31616 \u21270 \u29256 \u36130 \u20301 \u35745 \u31639 \u36923 \u36753 \
+            let wealthDirection = "";\
+            let tips = [];\
+\
+            if (door === 'east') \{\
+                wealthDirection = "Southeast Corner";\
+                tips = ["Place a money plant", "Use purple cloth"];\
+            \} else if (door === 'south') \{\
+                wealthDirection = "Northwest Corner"; \
+                tips = ["Add metal decor", "Keep area clean"];\
+            \} else if (door === 'west') \{\
+                wealthDirection = "Northeast Corner";\
+                tips = ["Display crystals", "Avoid clutter"];\
+            \} else if (door === 'north') \{\
+                wealthDirection = "Southwest Corner";\
+                tips = ["Use earth tones", "Add LED lighting"];\
+            \}\
+\
+            // \uc0\u26174 \u31034 \u32467 \u26524 \
+            locationSpan.textContent = wealthDirection;\
+            tipsList.innerHTML = tips.map(tip => `<li>$\{tip\}</li>`).join('');\
+            resultDiv.style.display = 'block';\
+\
+            // \uc0\u28378 \u21160 \u21040 \u32467 \u26524 \
+            resultDiv.scrollIntoView(\{behavior: 'smooth'\});\
+        \}\
+    </script>\
+</body>\
+</html>}
